@@ -55,7 +55,7 @@ namespace FormTester
             // lblEditUserName
             // 
             this.lblEditUserName.AutoSize = true;
-            this.lblEditUserName.Location = new System.Drawing.Point(264, 61);
+            this.lblEditUserName.Location = new System.Drawing.Point(264, 68);
             this.lblEditUserName.Name = "lblEditUserName";
             this.lblEditUserName.Size = new System.Drawing.Size(57, 13);
             this.lblEditUserName.TabIndex = 3;
@@ -69,6 +69,7 @@ namespace FormTester
             this.lblEditUserId.Size = new System.Drawing.Size(40, 13);
             this.lblEditUserId.TabIndex = 4;
             this.lblEditUserId.Text = "UserID";
+            this.lblEditUserId.Click += new System.EventHandler(this.lblEditUserId_Click);
             // 
             // lblEditName
             // 
@@ -127,6 +128,7 @@ namespace FormTester
             this.btnEditCancel.TabIndex = 11;
             this.btnEditCancel.Text = "Zatvori";
             this.btnEditCancel.UseVisualStyleBackColor = true;
+            this.btnEditCancel.Click += new System.EventHandler(this.btnEditCancel_Click);
             // 
             // btnEditUser
             // 
@@ -136,6 +138,7 @@ namespace FormTester
             this.btnEditUser.TabIndex = 12;
             this.btnEditUser.Text = "Spremi";
             this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // FormEditUser
             // 

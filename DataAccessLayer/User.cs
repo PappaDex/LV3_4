@@ -42,6 +42,45 @@ namespace DataAccessLayer
             }
             return users;
         }
+        public void UpdateUsers(User oUser)
+        {
+            string sSqlConnectionString = "Server=DESKTOP-GV9CUPH\\SQLEXPRESS;Database=LV2022;Trusted_Connection=True;";
+    using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())
+            {
+                oCommand.CommandText = "UPDATE users SET NAME = '" + oUser.UserFirstName +"', SURNAME = '" + oUser.UserLastName + "', PASSWORD = '" + oUser.UserName + "' WHERE USER_ID = "+oUser.UserID;
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+                }
+            }
+        }
+        public void AddUser(User oUser)
+        {
+            string sSqlConnectionString = "Server=DESKTOP-GV9CUPH\\SQLEXPRESS;Database=LV2022;Trusted_Connection=True;";
+            using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())
+            {
+                oCommand.CommandText = "INSERT INTO users (USERNAME, PASSWORD, NAME,SURNAME) VALUES('" + oUser.UserName + "', '" + oUser.UserPassword + "', '" + oUser.UserFirstName + "', '" + oUser.UserLastName + "');";
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+                }
+            }
+        }
+        public void DeleteUsers(int IDObrisanog)
+        {
+            string sSqlConnectionString = "Server=DESKTOP-GV9CUPH\\SQLEXPRESS;Database=LV2022;Trusted_Connection=True;";
+            using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())
+            {
+                oCommand.CommandText = "DELETE FROM users WHERE USER_ID = " + IDObrisanog;
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+                }
+            }
+        }
     }
 
     

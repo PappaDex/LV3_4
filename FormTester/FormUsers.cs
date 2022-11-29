@@ -14,12 +14,15 @@ namespace FormTester
     {
         private User _user = new User();
         private BindingSource _databindingsource = new BindingSource();
+        List<User> usercount = new List<User>();
+    
+            
         public FormUsers()
         {
       
             InitializeComponent();
             _databindingsource.DataSource = _user.GetUsers();
-         
+     
         }
 
      
@@ -57,6 +60,60 @@ namespace FormTester
         DataGridViewUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
                 FormEditUser.Show();
             }
+            if (DataGridViewUsers.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+            {
+                FormDeleteUser FormDeleteUser = new FormDeleteUser();
+                FormDeleteUser.lblObrisiKorisnika.Text = "Obrisi Korisnika " + DataGridViewUsers.Rows[e.RowIndex].Cells[0].Value.ToString()+"?";
+                FormDeleteUser.lblid.Text = DataGridViewUsers.Rows[e.RowIndex].Cells[0].Value.ToString(); 
+                FormDeleteUser.Show();
+            }
+        }
+
+        private void toolStripIzlaz_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripHelp_Click(object sender, EventArgs e)
+        {
+            FormInfo FormInfo = new FormInfo();
+
+            FormInfo.Show();
+        }
+
+        private void toolStripPomoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripAddUser_Click(object sender, EventArgs e)
+        {
+            usercount = _user.GetUsers();
+            User lastuser = usercount.LastOrDefault();
+            int lastID = lastuser.UserID + 1;
+            FormAddUsers FormAddUser = new FormAddUsers();
+            FormAddUser.lblidNumber.Text = lastID.ToString();
+            FormAddUser.Show();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void toolStripTextBox1_Click_1(object sender, EventArgs e)
+        {
+            usercount = _user.GetUsers();
+            User lastuser = usercount.LastOrDefault();
+            int lastID = lastuser.UserID + 1;
+            FormAddUsers FormAddUser = new FormAddUsers();
+            FormAddUser.lblidNumber.Text = lastID.ToString();
+            FormAddUser.Show();
         }
     }
 }

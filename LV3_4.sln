@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "FormTester\PresentationLayer.csproj", "{99E70F85-D4CC-43E1-8292-240E50077782}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersLibrary", "UsersLibrary\UsersLibrary.csproj", "{4613F150-C3B9-4A9C-92BD-9D0EE6287F6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{99E70F85-D4CC-43E1-8292-240E50077782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99E70F85-D4CC-43E1-8292-240E50077782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99E70F85-D4CC-43E1-8292-240E50077782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4613F150-C3B9-4A9C-92BD-9D0EE6287F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4613F150-C3B9-4A9C-92BD-9D0EE6287F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4613F150-C3B9-4A9C-92BD-9D0EE6287F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4613F150-C3B9-4A9C-92BD-9D0EE6287F6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
